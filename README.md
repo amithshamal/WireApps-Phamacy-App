@@ -19,17 +19,25 @@ To run this project locally, follow these steps:
 3. run composer install to Install dependencies:
 4. Copy the .env.example file to .env:
 5. Update the database settings in the .env file.
-7. Migrate the database:
-8. Seed the database with mock data:
+6. Seed the database with mock data (php artisan migrate:fresh --seed):
+7. open postman and import (File->import) WireApps.postman_collection.json
 
 
 ### Running the Server
 
 To start the Laravel development server, run the following command:
+
 php artisan serve
 
 
-The API will be accessible at http://localhost:8000 by default.
+The API will be accessible at http://127.0.0.1:8000 by default.
+
+## setup instructions
+1. Login as an admin (UN -- admin@admin.com, PW-- password)
+2. Create Manager(use User Register--Manager postman call)
+3. Create cashier(use User Register--Cashier postman call)
+
+Get the token return by each action and use them as Bearer token(Bearer Token)
 
 ## Endpoints
 

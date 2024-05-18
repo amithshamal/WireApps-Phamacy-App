@@ -271,23 +271,7 @@
 						],
 						"body": {
 							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "customer1",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "customer1@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "1234567890",
-									"type": "text"
-								}
-							]
+							"formdata": []
 						},
 						"url": "http://127.0.0.1:8000/api/customers/1"
 					},
