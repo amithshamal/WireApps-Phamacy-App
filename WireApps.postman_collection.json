@@ -123,7 +123,7 @@
 									"type": "text"
 								},
 								{
-									"key": "user_role",
+									"key": "role",
 									"value": "manager",
 									"type": "text"
 								}
@@ -168,7 +168,7 @@
 									"type": "text"
 								},
 								{
-									"key": "user_role",
+									"key": "role",
 									"value": "cashier",
 									"type": "text"
 								}
