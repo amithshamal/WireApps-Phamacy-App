@@ -19,7 +19,7 @@ class RegisterRequest extends FormRequest
             'name' => 'required',
             'username' => 'required|email|unique:users',
             'password' => 'required|confirmed',
-            'user_role' => 'required|in:manager,cashier'
+            'role' => 'required|in:manager,cashier,admin'
         ];
     }
 

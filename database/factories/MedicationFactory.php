@@ -9,17 +9,16 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserFactory extends Factory
+class MedicationFactory extends Factory
 {
 
     protected static ?string $password;
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'username' => fake()->unique()->safeEmail(),
-            'password' => static::$password ??= Hash::make('password'),
-            'role' => 'manager'
+            'name' => fake()->word,
+            'description' => fake()->sentence,
+            'quantity' => fake()->randomNumber()
         ];
     }
 }
