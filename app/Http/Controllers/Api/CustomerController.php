@@ -30,7 +30,7 @@ class CustomerController extends Controller
                 'status' => true,
                 'message' => 'Customer created successfully!',
                 'data' => new CustomerResource($customer)
-            ], Response::HTTP_OK);
+            ], Response::HTTP_CREATED);
         } else {
             return response()->json([
                 'status' => false,

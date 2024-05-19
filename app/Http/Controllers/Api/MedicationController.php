@@ -34,7 +34,7 @@ class MedicationController extends Controller
                 'status' => true,
                 'message' => 'medication created successfully!',
                 'data' => new MedicationResource($medication)
-            ], Response::HTTP_OK);
+            ], Response::HTTP_CREATED);
         } else {
             return response()->json([
                 'status' => false,

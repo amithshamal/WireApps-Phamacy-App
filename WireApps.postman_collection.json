@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "09459944-bf48-4940-a9ab-e60a42fdcce2",
+		"_postman_id": "adb75637-0c78-4172-827b-6339866651a4",
 		"name": "WireApps",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "2375821",
-		"_collection_link": "https://universal-resonance-823672.postman.co/workspace/Laravel-Testing~87d6bca0-f8c8-47a8-851f-ba1b3da95668/collection/2375821-09459944-bf48-4940-a9ab-e60a42fdcce2?action=share&source=collection_link&creator=2375821"
+		"_collection_link": "https://universal-resonance-823672.postman.co/workspace/Laravel-Testing~87d6bca0-f8c8-47a8-851f-ba1b3da95668/collection/2375821-adb75637-0c78-4172-827b-6339866651a4?action=share&source=collection_link&creator=2375821"
 	},
 	"item": [
 		{
@@ -195,7 +195,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 2|5wprR9Fy8OKfdKptOt6yVAGEznZHbIyOUJ2l3Ic03ce17b36",
+								"value": "Bearer 2|VwiKAROfyAbREUqDzxJnlSZp8ah4i2E1TkKy2pcCdfacd977",
 								"type": "text"
 							}
 						],
@@ -238,7 +238,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 2|5wprR9Fy8OKfdKptOt6yVAGEznZHbIyOUJ2l3Ic03ce17b36",
+								"value": "Bearer 2|VwiKAROfyAbREUqDzxJnlSZp8ah4i2E1TkKy2pcCdfacd977",
 								"type": "text"
 							}
 						],
@@ -265,7 +265,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 2|5wprR9Fy8OKfdKptOt6yVAGEznZHbIyOUJ2l3Ic03ce17b36",
+								"value": "Bearer 4|NVg74TW7owuYfB7yJeYvbziKE3oBsNteZu9p1moC364e9718",
 								"type": "text"
 							}
 						],
@@ -289,20 +289,20 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 2|5wprR9Fy8OKfdKptOt6yVAGEznZHbIyOUJ2l3Ic03ce17b36",
+								"value": "Bearer 2|VwiKAROfyAbREUqDzxJnlSZp8ah4i2E1TkKy2pcCdfacd977",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"customer1\" ,\n    \"email\": \"customer1@gmail.com\",\n    \"phone\": \"1234567890\"\n}",
+							"raw": "{\n    \"name\": \"customer 1 updated\" ,\n    \"email\": \"customer1@gmail.com\",\n    \"phone\": \"1234567890\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/api/customers/6"
+						"url": "http://127.0.0.1:8000/api/customers/1"
 					},
 					"response": []
 				},
@@ -363,7 +363,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 2|VMqqDt1VmqDemrvQBM9kgGGN5NgIoSuiffnTFpS098d8fb37",
+								"value": "Bearer 2|VwiKAROfyAbREUqDzxJnlSZp8ah4i2E1TkKy2pcCdfacd977",
 								"type": "text"
 							}
 						],
@@ -372,7 +372,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "medications2",
+									"value": "medications1",
 									"type": "text"
 								},
 								{
@@ -382,7 +382,7 @@
 								},
 								{
 									"key": "quantity",
-									"value": "1",
+									"value": "5",
 									"type": "text"
 								}
 							]
@@ -406,7 +406,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 4|rHINOJrsVjIivVkD6pzMVT3W6ZVJkmGBt1gYsY0U412f0f1e",
+								"value": "Bearer 4|NVg74TW7owuYfB7yJeYvbziKE3oBsNteZu9p1moC364e9718",
 								"type": "text"
 							}
 						],
@@ -457,7 +457,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 1|9TpQsv2WGPrVFZj3OS0g4xcoPXxJC7Ec0AxJSZlZf54c8ded",
+								"value": "Bearer 2|VwiKAROfyAbREUqDzxJnlSZp8ah4i2E1TkKy2pcCdfacd977",
 								"type": "text"
 							}
 						],
@@ -486,7 +486,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 4|rHINOJrsVjIivVkD6pzMVT3W6ZVJkmGBt1gYsY0U412f0f1e",
+								"value": "Bearer 2|VwiKAROfyAbREUqDzxJnlSZp8ah4i2E1TkKy2pcCdfacd977",
 								"type": "text"
 							}
 						],

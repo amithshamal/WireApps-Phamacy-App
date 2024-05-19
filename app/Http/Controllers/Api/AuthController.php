@@ -20,11 +20,12 @@ class AuthController extends Controller
             "name" => $request->name,
             "username" => $request->username,
             "password" => bcrypt($request->password),
-            "role" => $request->user_role
+            "role" => $request->role
         ]);
-        $user_role = Role::findByName($request->user_role);
+        $user_role = Role::findByName($request->role, 'sanctum');
+
         if ($user_role) {
-            $user->assignRole($user_role);
+            $user->assignRole($user_role->name);
         }
         return new UserResource($user);
     }

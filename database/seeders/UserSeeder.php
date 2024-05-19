@@ -12,20 +12,20 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         //create Permission
-        $customer_create = Permission::create(['name' => 'customer.create']);
-        $customer_update = Permission::create(['name' => 'customer.update']);
-        $customer_delete = Permission::create(['name' => 'customer.delete']);
-        $customer_permanently_delete = Permission::create(['name' => 'customer.permanently.delete']);
+        $customer_create = Permission::create(['name' => 'customer.create','guard_name' => 'sanctum']);
+        $customer_update = Permission::create(['name' => 'customer.update','guard_name' => 'sanctum']);
+        $customer_delete = Permission::create(['name' => 'customer.delete','guard_name' => 'sanctum']);
+        $customer_permanently_delete = Permission::create(['name' => 'customer.permanently.delete','guard_name' => 'sanctum']);
 
-        $medication_create = Permission::create(['name' => 'medication.create']);
-        $medication_update = Permission::create(['name' => 'medication.update']);
-        $medication_delete = Permission::create(['name' => 'medication.delete']);
-        $medication_permanently_delete = Permission::create(['name' => 'medication.permanently.delete']);
+        $medication_create = Permission::create(['name' => 'medication.create','guard_name' => 'sanctum']);
+        $medication_update = Permission::create(['name' => 'medication.update','guard_name' => 'sanctum']);
+        $medication_delete = Permission::create(['name' => 'medication.delete','guard_name' => 'sanctum']);
+        $medication_permanently_delete = Permission::create(['name' => 'medication.permanently.delete','guard_name' => 'sanctum']);
 
         //create Roles
-        $admin_role = Role::create(['name' => 'admin']);
-        $manager_role = Role::create(['name' => 'manager']);
-        Role::create(['name' => 'cashier']);
+        $admin_role = Role::create(['name' => 'admin','guard_name' => 'sanctum']);
+        $manager_role = Role::create(['name' => 'manager','guard_name' => 'sanctum']);
+        Role::create(['name' => 'cashier','guard_name' => 'sanctum']);
 
         //assign permissions to role
         $admin_role->givePermissionTo([
