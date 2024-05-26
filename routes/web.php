@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Mail\MailController;
+use App\Http\Controllers\Queue\QueueController;
 use App\Mail\TestMail;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,9 @@ Route::get('/', function () {
 
 
 Route::get('send-mail', [MailController::class, 'sendTestEmail']);
+
+//Queue
+Route::prefix('queues')->group(function () {
+    Route::get('queue-jobs', [QueueController::class, 'dispatchJobs']);
+    Route::get('setup', [QueueController::class, 'setup']);
+});
