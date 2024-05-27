@@ -9,23 +9,37 @@ use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Helpers\Helper;
+use App\Repositories\CustomerRepositoryInterface;
+use App\Repositories\CustomerRepository; // 2. bind only concert class
 
 class CustomerController extends Controller
 {
+    protected $customerRepository;
+    
+    public function __construct(CustomerRepositoryInterface $customerRepository)
+    {
+        $this->customerRepository = $customerRepository;
+    }
+
+    // 2. bind only concert class
+    // public function __construct(CustomerRepository $customerRepository)
+    // {
+    //     $this->customerRepository = $customerRepository;
+    // }
+
     public function index()
     {
-        $customers = Customer::all();
+        $customers = $this->customerRepository->all();
         return response()->json([
             'status' => true,
             'data' => CustomerResource::collection($customers)
         ], Response::HTTP_OK);
     }
 
-
     public function store(StoreCustomerRequest $request)
     {
         if (Helper::validatePermission('customer.create')) {
-            $customer = Customer::create($request->all());
+            $customer = $this->customerRepository->create($request->all());
             return response()->json([
                 'status' => true,
                 'message' => 'Customer created successfully!',
@@ -51,11 +65,11 @@ class CustomerController extends Controller
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
         if (Helper::validatePermission('customer.update')) {
-            $customer->update($request->all());
+            $updatedCustomer = $this->customerRepository->update($customer, $request->all());
             return response()->json([
                 'status' => true,
                 'message' => 'Customer updated successfully!',
-                'data' => new CustomerResource($customer)
+                'data' => new CustomerResource($updatedCustomer)
             ], Response::HTTP_OK);
         } else {
             return response()->json([
@@ -65,13 +79,14 @@ class CustomerController extends Controller
         }
     }
 
+
     public function destroy(Customer $customer)
     {
         if (Helper::validatePermission('customer.permanently.delete') || Helper::validatePermission('customer.delete')) {
             if (Helper::validatePermission('customer.permanently.delete')) {
-                $customer->forceDelete();
+                $this->customerRepository->forceDelete($customer);
             } else if (Helper::validatePermission('customer.delete')) {
-                $customer->delete();;
+                $this->customerRepository->delete($customer);
             }
             return response()->json([
                 'status' => true,

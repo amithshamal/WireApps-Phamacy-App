@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MedicationController;
 use App\Http\Controllers\Mail\MailController;
 use App\Http\Controllers\Queue\QueueController;
 use App\Mail\TestMail;
@@ -28,4 +29,9 @@ Route::get('send-mail', [MailController::class, 'sendTestEmail']);
 Route::prefix('queues')->group(function () {
     Route::get('queue-jobs', [QueueController::class, 'dispatchJobs']);
     Route::get('setup', [QueueController::class, 'setup']);
+});
+
+//Repository
+Route::prefix('medications')->group(function () {
+    Route::get('setup', [MedicationController::class, 'setup']);
 });
