@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\MedicationController;
+use App\Http\Controllers\Excel\ExcelController;
 use App\Http\Controllers\Mail\MailController;
 use App\Http\Controllers\Queue\QueueController;
 use App\Http\Controllers\Socialite\GoogleController;
@@ -38,5 +39,13 @@ Route::prefix('medications')->group(function () {
 });
 
 
+//Socialite
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('callback/google', [GoogleController::class, 'handleGoogleCallback']);
+
+//
+Route::get('users/export', [ExcelController::class, 'export']);
+Route::post('users/import', [ExcelController::class, 'import']);
+Route::get('users/import', function () {
+    return view('excel.import');
+});
